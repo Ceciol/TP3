@@ -48,13 +48,13 @@ class Obstacle(pygame.sprite.Sprite):
     def collision(self, x, y, other, type):
         speed = 0
         dx = self.pos.x - x
-        dy = self.pos.y - x
+        dy = self.pos.y - y
         rads = math.atan2(-dy, dx)
         other_vel = other.get_vel()
         mag = (other_vel.x ** 2 + other_vel.y ** 2) ** 0.5
         if type == "arrow":
-            self.vel.x =  (self.vel.x + 30) * math.cos(rads)
-            self.vel.y = self.vel.y * math.sin(rads)
+            self.vel.x =  (abs(self.vel.x) + 5) * math.cos(rads)
+            self.vel.y = (abs(self.vel.y) + 5) * math.sin(rads)
         if type == "map":
             if self.rect.x > other.rect.x: self.vel.x = abs(self.vel.x) + speed
             elif self.rect.x < other.rect.x: self.vel.x = -abs(self.vel.x) - speed

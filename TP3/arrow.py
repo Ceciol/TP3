@@ -12,7 +12,7 @@ class Arrow(pygame.sprite.Sprite):
                 pygame.image.load('image/arrow.png').convert_alpha(),
                 (20, 20)), 0)
         self.rect = self.image.get_rect()
-        self.rect.center = (self.w / 2, self.h * 4/5)
+        self.rect.center = (self.w / 2 + 10, self.h * 4/5)
         self.speedx = 0
         self.speedy = 0 
         self.color_timer = pygame.time.get_ticks()

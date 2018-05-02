@@ -7,7 +7,7 @@ class PowerUp(pygame.sprite.Sprite):
         super(PowerUp, self).__init__()
         self.w = w 
         self.h = h 
-        self.type = random.choice(["fast","color","goldCoin"])
+        self.type = random.choice(["fast","color","goldCoin","enemy"])
         self.image = powerupImg[self.type]
         self.rect = self.image.get_rect()
         self.rect.x = random.randrange(self.w - self.rect.width)
