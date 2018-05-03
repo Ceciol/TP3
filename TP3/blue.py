@@ -13,8 +13,9 @@ class BlueSquare(Obstacle):
         self.vx = 0
         self.vy = 8
         self.posx = random.randrange(200,400)
-        self.posy = -1
-        self.mass = 10 
+        # changed 
+        self.posy = 0
+        self.mass = 3
         super().__init__(self.image, self.vx, self.vy, self.posx, self.posy, self.mass)
     
 
